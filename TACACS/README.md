@@ -1,5 +1,7 @@
 Enable TACACS+ Feature
-```feature tacacs+```
+```
+feature tacacs+
+```
 
 TACACS+ Server configuration
 ```
