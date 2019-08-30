@@ -25,7 +25,7 @@ tacacs-server host <PSN_ip_address_4> test username ISE_TEST password ISE_TEST i
 ```
 AAA Group Configuration
 ```
-aaa group server tacacs+ Winston_ISE
+aaa group server tacacs+ <Group_Name>
 
 server <PSN_ip_address_1>
 
