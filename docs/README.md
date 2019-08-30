@@ -41,7 +41,7 @@ deadtime 60
 
 source-interface <interface_name>
 ```
-Deadtime says how long a failed TACACS+ server should be makes as FAILED.
+Deadtime says how long a failed TACACS+ server should be marked as FAILED.
 
 AAA Configuration
 ```
