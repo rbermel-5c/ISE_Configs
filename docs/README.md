@@ -23,6 +23,8 @@ tacacs-server host <PSN_ip_address_3> test username ISE_TEST password ISE_TEST i
 
 tacacs-server host <PSN_ip_address_4> test username ISE_TEST password ISE_TEST idle-time 15
 ```
+TACACS+ username test configuration does not have to be successful. ISE just needs to respond.
+
 AAA Group Configuration
 ```
 aaa group server tacacs+ <Group_Name>
@@ -38,6 +40,31 @@ server <PSN_ip_address_4>
 deadtime 60
 
 source-interface <interface_name>
+```
+Deadtime says how long a failed TACACS+ server should be makes as FAILED.
+
+AAA Configuration
+```
+aaa authentication login default group <Group_Name> local
+
+aaa authentication login console group <Group_Name> local
+
+aaa authorization config-commands default group <Group_Name> local
+
+aaa authorization commands default group <Group_Name> local
+
+aaa accounting default group <Group_Name>
+```
+
+Testing aaa Configuration
+```
+test aaa server tacacs+ <PSN_ip_address_1> <username> <password>
+
+test aaa server tacacs+ <PSN_ip_address_2> <username> <password>
+
+test aaa server tacacs+ <PSN_ip_address_3> <username> <password>
+
+test aaa server tacacs+ <PSN_ip_address_4> <username> <password>
 ```
 
 Cisco TACACS+ Configuration Guide (https://community.cisco.com/t5/security-documents/cisco-ise-device-administration-prescriptive-deployment-guide/ta-p/3738365#toc-hId-1977002717)
