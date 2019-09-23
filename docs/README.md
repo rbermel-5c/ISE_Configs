@@ -82,7 +82,7 @@ aaa authorization commands default group <Group_Name> local
 aaa accounting default group <Group_Name>
 ```
 
-###Testing aaa Configuration
+### Testing aaa Configuration
 ```
 test aaa server tacacs+ <PSN_ip_address_1> <username> <password>
 test aaa server tacacs+ <PSN_ip_address_2> <username> <password>
