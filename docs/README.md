@@ -2,9 +2,45 @@
 ### ISE Network Device Configuraiton
 
 ### ASA OS
-### IOS
-### WLC
+TACACS+ Server Configuration
+```
+aaa-server <group_name> protocol TACACS+
+aaa-server <PSN_server_name> <(Interface_name)> host <PSN_ip_address_1>
+key <ISE_node_shared_secret>
+```
+AAA configuration
+```
+aaa authentication ssh console <group_name> LOCAL
+aaa authentication enable console <group_name> LOCAL
+aaa authentication http console <group_name> LOCAL
+aaa authentication secure-http-client
+aaa authorization exec authentication-server auto-enable LOCAL
+aaa accounting ssh console <group_name>
+aaa accounting serial console <group_name>
+aaa accounting enable console <group_name>
 
+```
+### IOS-XE
+Enable new model
+```
+aaa new-model
+```
+TACACS+ Server Group Configuration
+```
+aaa group server tacacs+ <group_name>
+server-private <PSN_ip_address_1> key <ISE_node_shared_secret>
+server-private <PSN_ip_address_2> key <ISE_node_shared_secret>
+```
+AAA Configuration
+```
+aaa authentication login group <group_name> local]
+aaa authorization exec default local
+aaa authorization exec group <group_name> local
+aaa accounting exec default start-stop group <group_name>
+aaa accounting commands 1 default start-stop group <group_name>
+aaa accounting commands 15 default start-stop group <group_name>
+
+```
 ### NX-OS
 
 Enable TACACS+ Feature
