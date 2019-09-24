@@ -18,6 +18,7 @@ aaa authorization exec authentication-server auto-enable LOCAL
 aaa accounting ssh console <group_name>
 aaa accounting serial console <group_name>
 aaa accounting enable console <group_name>
+aaa authorization exec authentication-server auto-enable
 
 ```
 ### IOS-XE
